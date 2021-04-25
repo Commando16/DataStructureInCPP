@@ -2,7 +2,7 @@
 
 Data Structure program in C++
 
--> Pre-requisit a firm understanding of C++ language -
+# Pre-requisit a firm understanding of C++ language -
 
     1. pointers 
     2. oop concept
