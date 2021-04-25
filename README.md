@@ -3,9 +3,9 @@
 Data Structure program in C++
 
 -> Pre-requisit a firm understanding of C++ language
-    - pointers 
-    - oop concept
-    - addressing in c++
+    1. pointers 
+    2. oop concept
+    3. addressing in c++
 
 -> The Toppics and Program covered here are as follows -
     
