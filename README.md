@@ -8,7 +8,7 @@ Data Structure program in C++
     2. oop concept
     3. addressing in c++
 
--> The Toppics and Program covered here are as follows -
+# The Toppics and Program covered here are as follows -
     
     1. Array 
     2. Linked List
