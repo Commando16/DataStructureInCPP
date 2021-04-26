@@ -41,14 +41,14 @@ class Stack{
     void pop(){        
         if( isEmpty() )
         { cout<<"Stack underflow. No more pop operation can be performed"<<endl; 
-          //return 0;
+          return 0;
         }
         else{            
             int a = arr[top];  
             top--;          
             size--;
             cout<<a<<" is popped out of the stack"<<endl;
-            //return a;
+            return a;
         }
     }
 
