@@ -1,0 +1,48 @@
+INfix to POSTfix conversion - 
+
+
+Rule for converson
+
+1. print operands as they arrive.
+
+
+2. if stack is empty or contains a left paranthiesis on top, PUSH the incoming operator onto the stack.
+
+
+3. if incoming symbol is "(", PUSH it onto stack.
+
+
+4. if incoming symbol is ")", PUSH it onto stack & print the operators until left
+paranthesis is found.
+
+
+5. if incoming symbol has HIGHRER precedence then the top of the symbol has higher precedence than the top of the stack, PUSH it on the stack.
+
+
+6. if incoming symbol has LOWER precedence then the top of the stack, POP ans print the top. Then test the incoming operator with the new top of the stack.
+
+
+7. if incoming operatior has equal precedence with the top of the stack, use associativity rule.
+
+	- if associativity LEFT to RIGHT then POP and print the top of the stack and then PUSH the incomming operator.
+
+	- if RIGHT to LEFT then PUSH the incoming operator. 
+
+
+8. At the end of the expression, POP and print all operator  of stack.
+
+
+
+
+
+
+
+
+# PRECEDENCE AND ASSOCIATIVITY OF THE OPERATOR
+
+	^		(right to left)
+	* / 	(left to right)
+	+ -		(left to right)
+	
+
+
