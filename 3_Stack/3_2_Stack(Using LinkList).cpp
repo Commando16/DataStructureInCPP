@@ -83,14 +83,13 @@ public:
         if (isEmpty())
         {
             cout << "Stack underflow. No more pop operation can be performed" << endl;
-            //return 0;
+            return 0;
         }
         else            
         {   top--;
             int a = ll.deleteElement();
             size--;
-            //cout << a << " is popped out of the stack" << endl;
-            //return a;
+            return a;
         }
     }
 
@@ -126,16 +125,11 @@ int main()
     s.push(1);
     s.push(2);
     s.push(33);
-    s.display();
-    //cout <<"size of stack is-"<<s.stack_size()<<endl;
+    s.display();    
     s.pop();
-    //cout <<"size of stack is-"<<s.stack_size()<<endl;
     s.pop();
-    //cout <<"size of stack is-"<<s.stack_size()<<endl;
     s.pop();
-    //cout <<"size of stack is-"<<s.stack_size()<<endl;
     s.pop();
-    //cout <<"size of stack is-"<<s.stack_size()<<endl;
 
     return 0;
 }
