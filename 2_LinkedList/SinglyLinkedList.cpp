@@ -22,11 +22,11 @@ public:
     }
 
     void showLinkedList()
-    { //cout<<"show linked list"<<endl;
+    {
 
         if (this->length <= 0)
         {
-            cout << "The list is empty."<<endl;
+            cout << "The list is empty." << endl;
         }
         else
         {
@@ -41,33 +41,20 @@ public:
     }
 
     void insertData(int indata, int pos = 0)
-    { //cout<<"insert"<<endl;
+    {
         Node *newnode = new Node;
         newnode->data = indata;
 
         if (pos >= 0 && pos <= this->length)
         {
-            if (this->start == NULL or pos == 0) //insert at start
+            if (this->start == NULL or pos == 0)
             {
                 newnode->nxt = this->start;
                 this->start = newnode;
             }
 
-            // else if (pos == this->length) //insert at end
-            // {
-            //     Node *tracer = this->start;
-
-            //     while (tracer->nxt != NULL)
-            //     {
-            //         tracer = tracer->nxt;
-            //     }
-
-            //     newnode->nxt = NULL;
-            //     tracer->nxt = newnode;
-            // }
-
             else if (pos <= this->length)
-            { //cout<<"else condition"<<endl;
+            {
                 Node *tracer = this->start;
 
                 for (int i = 1; i < pos; i++)
@@ -77,13 +64,13 @@ public:
                 newnode->nxt = tracer->nxt;
                 tracer->nxt = newnode;
             }
+
+            this->length++;
         }
         else
         {
             cout << "The position you entered is wrong! Please enter valid position." << endl;
         }
-
-        this->length++;
     }
 
     void deleteData(int pos = 0)
@@ -91,7 +78,7 @@ public:
         Node *dlt_ptr = NULL;
         if (this->length == 0)
         {
-            cout << "There is no data to be deleted!"<<endl;
+            cout << "There is no data to be deleted!" << endl;
         }
         else
         {
@@ -123,35 +110,20 @@ public:
             }
         }
     }
-}o1;
+} o1;
 
 int main()
 {
 
-    //cout<<"hello world"<<endl;
     o1.insertData(5);
     o1.showLinkedList();
     o1.insertData(1);
-    //cout << o1.getLength() << endl;
-    o1.insertData(8,1);
-    // cout << o1.getLength() << endl;
+    o1.insertData(8, 1);
     o1.showLinkedList();
-    o1.insertData(7,2);
-    // cout << o1.getLength() << endl;
+    o1.insertData(7, 2);
     o1.showLinkedList();
-    o1.insertData(10,4);
-    // cout << o1.getLength() << endl;
+    o1.insertData(10, 4);
     o1.showLinkedList();
-    // o1.showLinkedList();
-
-     //o1.deleteData(4);
-    // cout << o1.getLength() << endl;
-
-     //o1.showLinkedList();
-    // o1.deleteData();
-    //cout<<"end world"<<endl;
-
-
 
     return 0;
 }

@@ -1,3 +1,4 @@
+#include <conio.h>
 #include <iostream>
 
 using namespace std;
@@ -6,10 +7,10 @@ class Node
 {
 public:
     int data;
-    Node *prev, *nxt;
+    Node *nxt;
 };
 
-class DLinkedList
+class SLinkedList
 {
     Node *start = NULL;
     int length = 0;
@@ -22,7 +23,6 @@ public:
 
     void showLinkedList()
     {
-
         if (this->length <= 0)
         {
             cout << "The list is empty." << endl;
@@ -48,30 +48,17 @@ public:
         {
             if (this->start == NULL)
             {
-
                 this->start = newnode;
-                newnode->prev = this->start;
                 newnode->nxt = this->start;
             }
 
             else if (pos == 0)
             {
-
-                Node *tracer = this->start;
-
-                for (int i = 1; i < pos; i++)
-                {
-                    tracer = tracer->nxt;
-                }
-
-                newnode->prev = tracer->nxt;
                 newnode->nxt = this->start;
-
-                this->start->prev = newnode;
                 this->start = newnode;
             }
 
-            else if (pos <= this->length)
+            else if (pos < this->length)
             {
                 Node *tracer = this->start;
 
@@ -81,16 +68,8 @@ public:
                 }
 
                 newnode->nxt = tracer->nxt;
-                newnode->prev = tracer;
-
-                if (tracer->nxt != this->start)
-                {
-                    tracer->nxt->prev = newnode;
-                }
-
                 tracer->nxt = newnode;
             }
-
             this->length++;
         }
         else
@@ -111,7 +90,6 @@ public:
 
             if (pos >= 0 && pos < this->length)
             {
-
                 if (start->nxt == start)
                 {
                     dlt_ptr = start;
@@ -128,10 +106,10 @@ public:
                         tracer = tracer->nxt;
                     }
 
-                    start->nxt->prev = tracer->nxt;
-                    this->start = start->nxt;
+                    start = start->nxt;
                     tracer->nxt = start;
                 }
+
                 else
                 {
                     Node *tracer = this->start;
@@ -142,16 +120,7 @@ public:
                     }
 
                     dlt_ptr = tracer->nxt;
-
-                    if (tracer->nxt->nxt != this->start)
-                    {
-                        tracer->nxt->nxt->prev = tracer;
-                        tracer->nxt = tracer->nxt->nxt;
-                    }
-                    else
-                    {
-                        tracer->nxt = this->start;
-                    }
+                    tracer->nxt = tracer->nxt->nxt;
                 }
                 delete dlt_ptr;
                 this->length--;
@@ -162,21 +131,16 @@ public:
             }
         }
     }
-
 } o1;
 
 int main()
 {
-
     o1.insertData(5);
     o1.showLinkedList();
     o1.insertData(1);
-    o1.showLinkedList();
+
     o1.insertData(8, 1);
-    o1.showLinkedList();
-    o1.insertData(7, -1);
-    o1.showLinkedList();
-    o1.deleteData(-1);
+    o1.insertData(7, 4);
 
     o1.showLinkedList();
 

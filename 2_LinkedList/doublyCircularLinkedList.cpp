@@ -30,7 +30,7 @@ public:
         else
         {
             Node *tracer = this->start;
-            for (int i = 0; i < this->length; i++)
+            while (tracer != NULL)
             {
                 cout << tracer->data << " ";
                 tracer = tracer->nxt;
@@ -46,28 +46,16 @@ public:
 
         if (pos >= 0 && pos <= this->length)
         {
-            if (this->start == NULL)
+            if (pos == 0 || this->start == NULL)
             {
 
-                this->start = newnode;
-                newnode->prev = this->start;
+                newnode->prev = NULL;
                 newnode->nxt = this->start;
-            }
 
-            else if (pos == 0)
-            {
-
-                Node *tracer = this->start;
-
-                for (int i = 1; i < pos; i++)
+                if (this->start != NULL)
                 {
-                    tracer = tracer->nxt;
+                    this->start->prev = newnode;
                 }
-
-                newnode->prev = tracer->nxt;
-                newnode->nxt = this->start;
-
-                this->start->prev = newnode;
                 this->start = newnode;
             }
 
@@ -83,14 +71,13 @@ public:
                 newnode->nxt = tracer->nxt;
                 newnode->prev = tracer;
 
-                if (tracer->nxt != this->start)
+                if (tracer->nxt != NULL)
                 {
                     tracer->nxt->prev = newnode;
                 }
 
                 tracer->nxt = newnode;
             }
-
             this->length++;
         }
         else
@@ -111,26 +98,11 @@ public:
 
             if (pos >= 0 && pos < this->length)
             {
-
-                if (start->nxt == start)
+                if (pos == 0)
                 {
                     dlt_ptr = start;
-                    start = NULL;
-                }
-
-                else if (pos == 0)
-                {
-                    dlt_ptr = start;
-
-                    Node *tracer = this->start;
-                    for (int i = 1; i < length; i++)
-                    {
-                        tracer = tracer->nxt;
-                    }
-
-                    start->nxt->prev = tracer->nxt;
-                    this->start = start->nxt;
-                    tracer->nxt = start;
+                    start->nxt->prev = NULL;
+                    start = start->nxt;
                 }
                 else
                 {
@@ -143,14 +115,14 @@ public:
 
                     dlt_ptr = tracer->nxt;
 
-                    if (tracer->nxt->nxt != this->start)
+                    if (tracer->nxt->nxt != NULL)
                     {
                         tracer->nxt->nxt->prev = tracer;
                         tracer->nxt = tracer->nxt->nxt;
                     }
                     else
                     {
-                        tracer->nxt = this->start;
+                        tracer->nxt = NULL;
                     }
                 }
                 delete dlt_ptr;
@@ -174,9 +146,12 @@ int main()
     o1.showLinkedList();
     o1.insertData(8, 1);
     o1.showLinkedList();
-    o1.insertData(7, -1);
+    o1.insertData(7, 2);
     o1.showLinkedList();
-    o1.deleteData(-1);
+    o1.insertData(10, 4);
+    o1.showLinkedList();
+
+    o1.deleteData(0);
 
     o1.showLinkedList();
 
