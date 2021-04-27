@@ -53,7 +53,9 @@ Data Structure program in C++
  
 4. path finding algorithm -
     - Dijkstra' algorithm
-    - 
+   
+5. Greedy method
+6. Dynamic Programming
 
 
 # The mislenious Topics to cover-
