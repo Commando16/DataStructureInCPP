@@ -12,7 +12,7 @@ Data Structure program in C++
 
 
 
-# The Toppics and Program covered here are as follows -
+# The Topics and Program covered here are as follows -
     
     1. Array 
     2. Linked List
@@ -24,12 +24,14 @@ Data Structure program in C++
 
 1. queue
 2. tree
-3. heap
+3. graph
+4. heap
+5. hashing
 
 
 
 
-# The Toppics to cover in DataStructure-
+# The Topics to cover in DataStructure-
 
 1. searching algorithm
     - linear
@@ -42,9 +44,19 @@ Data Structure program in C++
     - merge sort
     - redix sort
     - quick sort
+    - count sort
+    - shell sort
+
+3. shortest path algorithm -
+    - prim' algorithm
+    - kruskals algorithm
+ 
+4. path finding algorithm -
+    - Dijkstra' algorithm
+    - 
 
 
-# The mislenious Toppics to cover-
+# The mislenious Topics to cover-
 
 1. Asymtotic notation
 
