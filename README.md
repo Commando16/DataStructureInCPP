@@ -19,3 +19,34 @@ Data Structure program in C++
     3. Stack
 
 
+   
+# The Toppics to cover in DataStructure-
+
+1. queue
+2. tree
+3. heap
+
+
+
+
+# The Toppics to cover in DataStructure-
+
+1. searching algorithm
+    - linear
+    - binary 
+    
+2. sorting algorithm
+    - insertion sort 
+    - bubble sort 
+    - selection sort
+    - merge sort
+    - redix sort
+    - quick sort
+
+
+# The mislenious Toppics to cover-
+
+1. Asymtotic notation
+
+
+
