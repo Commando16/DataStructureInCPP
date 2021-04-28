@@ -12,7 +12,7 @@ class QueueLL
     };
 
     Node *front = NULL;
-    Node *rare = NULL;
+    Node *rear = NULL;
     int length = 0;
 
 public:
@@ -22,15 +22,15 @@ public:
         newnode->data = data;
         newnode->nxt = NULL;
 
-        if ((this->front == NULL) && (this->rare == NULL))
+        if ((this->front == NULL) && (this->rear == NULL))
         {
-            this->front = this->rare = newnode;
+            this->front = this->rear = newnode;
         }
 
         else
         {
-            this->rare->nxt = newnode;
-            this->rare = newnode;
+            this->rear->nxt = newnode;
+            this->rear = newnode;
         }
 
         this->length++;
@@ -56,7 +56,7 @@ public:
         }
     }
 
-    int dequeueRare()
+    int dequeueRear()
     {
         if (this->front == NULL)
         {
@@ -70,16 +70,16 @@ public:
 
             Node *tracer = this->front;
 
-            while ( tracer->nxt != this->rare )
+            while ( tracer->nxt != this->rear )
             {
                 tracer = tracer->nxt;
             }
 
-            data =  this->rare->data;
-            del_ptr = this->rare;
+            data =  this->rear->data;
+            del_ptr = this->rear;
 
             tracer->nxt = NULL;
-            this->rare = tracer;
+            this->rear = tracer;
 
             this->length--;
             delete del_ptr;
@@ -96,7 +96,7 @@ public:
     {
         Node *tracer = this->front;
 
-        while (tracer != this->rare)
+        while (tracer != this->rear)
         {
             cout << tracer->data << " ";
             tracer = tracer->nxt;
@@ -128,8 +128,8 @@ int main()
     cout << q.dequeueFront() << " dequeued from front" << endl;
     cout << q.dequeueFront() << " dequeued from front" << endl;
 
-    cout << q.dequeueRare() << " dequeued from rare" << endl;
-    cout << q.dequeueRare() << " dequeued from rare" << endl;
+    cout << q.dequeueRear() << " dequeued from rear" << endl;
+    cout << q.dequeueRear() << " dequeued from rear" << endl;
 
     q.displayQueue();   
 

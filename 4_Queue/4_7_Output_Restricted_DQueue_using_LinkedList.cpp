@@ -12,25 +12,25 @@ class QueueLL
     };
 
     Node *front = NULL;
-    Node *rare = NULL;
+    Node *rear = NULL;
     int length = 0;
 
 public:
-    void enqueRare(int data)
+    void enqueRear(int data)
     {
         Node *newnode = new Node;
         newnode->data = data;
         newnode->nxt = NULL;
 
-        if ((this->front == NULL) && (this->rare == NULL))
+        if ((this->front == NULL) && (this->rear == NULL))
         {
-            this->front = this->rare = newnode;
+            this->front = this->rear = newnode;
         }
 
         else
         {
-            this->rare->nxt = newnode;
-            this->rare = newnode;
+            this->rear->nxt = newnode;
+            this->rear = newnode;
         }
 
         this->length++;
@@ -41,10 +41,10 @@ public:
         Node *newnode = new Node;
         newnode->data = data;
 
-        if ((this->front == NULL) && (this->rare == NULL))
+        if ((this->front == NULL) && (this->rear == NULL))
         {
             newnode->nxt = NULL;
-            this->front = this->rare = newnode;
+            this->front = this->rear = newnode;
         }
 
         else
@@ -85,7 +85,7 @@ public:
     {
         Node *tracer = this->front;
 
-        while (tracer != this->rare)
+        while (tracer != this->rear)
         {
             cout << tracer->data << " ";
             tracer = tracer->nxt;
@@ -103,15 +103,15 @@ int main()
     cout << "Length if the queue is- " << q.queueLength() << endl;
 
     q.enqueFront(0);
-    q.enqueRare(1);
-    q.enqueRare(2);
-    q.enqueRare(3);
-    q.enqueRare(4);
-    q.enqueRare(5);
-    q.enqueRare(6);
-    q.enqueRare(7);
+    q.enqueRear(1);
+    q.enqueRear(2);
+    q.enqueRear(3);
+    q.enqueRear(4);
+    q.enqueRear(5);
+    q.enqueRear(6);
+    q.enqueRear(7);
     q.enqueFront(8);
-    q.enqueRare(9);
+    q.enqueRear(9);
 
     q.displayQueue();
 
