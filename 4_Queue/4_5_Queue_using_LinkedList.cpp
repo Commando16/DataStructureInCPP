@@ -4,7 +4,6 @@ using namespace std;
 
 class QueueLL
 {
-
     struct Node
     {
         int data;

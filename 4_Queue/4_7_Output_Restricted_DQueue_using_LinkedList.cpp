@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class QueueLL
+class DQueueLL
 {
 
     struct Node
@@ -98,7 +98,7 @@ public:
 int main()
 {
 
-    QueueLL q;
+    DQueueLL q;
 
     cout << "Length if the queue is- " << q.queueLength() << endl;
 

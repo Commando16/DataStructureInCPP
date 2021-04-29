@@ -2,9 +2,8 @@
 
 using namespace std;
 
-class DQueueLL
+class CircularQueueCLL
 {
-
     struct Node
     {
         int data;
@@ -19,16 +18,17 @@ public:
     void enque(int data)
     {
         Node *newnode = new Node;
-        newnode->data = data;
-        newnode->nxt = NULL;
+        newnode->data = data;        
 
         if ((this->front == NULL) && (this->rear == NULL))
-        {
+        {   
+            newnode->nxt = newnode;
             this->front = this->rear = newnode;
         }
 
         else
-        {
+        {   
+            newnode->nxt = this->front;
             this->rear->nxt = newnode;
             this->rear = newnode;
         }
@@ -36,7 +36,7 @@ public:
         this->length++;
     }
 
-    int dequeueFront()
+    int dequeue()
     {
         if (this->front == NULL)
         {
@@ -49,37 +49,7 @@ public:
 
             int data = this->front->data;
             this->front = this->front->nxt;
-
-            this->length--;
-            delete del_ptr;
-            return data;
-        }
-    }
-
-    int dequeueRear()
-    {
-        if (this->front == NULL)
-        {
-            cout << "The Queue is empty. Queue undeflown." << endl;
-            return -999;
-        }
-        else
-        {
-            Node *del_ptr;
-            int data;
-
-            Node *tracer = this->front;
-
-            while ( tracer->nxt != this->rear )
-            {
-                tracer = tracer->nxt;
-            }
-
-            data =  this->rear->data;
-            del_ptr = this->rear;
-
-            tracer->nxt = NULL;
-            this->rear = tracer;
+            this->rear->nxt = this->front;
 
             this->length--;
             delete del_ptr;
@@ -109,7 +79,7 @@ public:
 int main()
 {
 
-    DQueueLL q;
+    CircularQueueCLL q;
 
     cout << "Length if the queue is- " << q.queueLength() << endl;
 
@@ -124,16 +94,16 @@ int main()
 
     q.displayQueue();
 
-    cout << q.dequeueFront() << " dequeued from front" << endl;
-    cout << q.dequeueFront() << " dequeued from front" << endl;
-    cout << q.dequeueFront() << " dequeued from front" << endl;
-
-    cout << q.dequeueRear() << " dequeued from rear" << endl;
-    cout << q.dequeueRear() << " dequeued from rear" << endl;
-
-    q.displayQueue();   
+    cout << q.dequeue() << " dequeued" << endl;
+    cout << q.dequeue() << " dequeued" << endl;
+    cout << q.dequeue() << " dequeued" << endl;
+    cout << q.dequeue() << " dequeued" << endl;
+    cout << q.dequeue() << " dequeued" << endl;
+    cout << q.dequeue() << " dequeued" << endl;
 
     cout << "Length if the queue is- " << q.queueLength() << endl;
+
+    q.displayQueue();
 
     return 0;
 }
