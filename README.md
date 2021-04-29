@@ -17,16 +17,17 @@ Data Structure program in C++
     1. Array 
     2. Linked List
     3. Stack
+    4. Queue
+    5. 
 
 
    
 # The Toppics to cover in DataStructure-
 
-1. queue
-2. tree
-3. graph
-4. heap
-5. hashing
+1. tree
+2. graph
+3. heap
+4. hashing
 
 
 
