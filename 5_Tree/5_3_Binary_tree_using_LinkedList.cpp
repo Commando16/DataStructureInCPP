@@ -18,7 +18,7 @@ class Tree{
         int data = 0;
         Node* Root = new Node;
 
-        cout<< "Enter some interger data- ";
+        cout<<endl<<endl<< "Enter some interger data- ";
         cin>> data;
 
 
@@ -97,6 +97,22 @@ class Tree{
         return;
     }
 
+    void treeflip( Node* Root){
+        if(Root == NULL){
+            return;
+        }
+
+        treeflip(Root->left);
+        treeflip(Root->right);
+        
+        Node* temp;
+        temp = Root->left;
+        Root->left = Root->right;
+        Root->right = temp;
+
+        return;
+    }
+
     
 };
 
@@ -105,7 +121,16 @@ class Tree{
 int main(){
     Tree t1;
     t1.create();
+    t1.preorderTraversal(t1.getRoot());
+    cout<<endl;
     t1.inorderTraversal(t1.getRoot());
+    cout<<endl;
+    t1.postorderTraversal(t1.getRoot());
+    cout<<endl;
+
+    cout<<"After tree reversal-"<<endl<<endl;
+    t1.treeflip(t1.getRoot());
+    t1.postorderTraversal(t1.getRoot());
     cout<<endl;
     return 0;
 }
