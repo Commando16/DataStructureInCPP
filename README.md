@@ -31,7 +31,7 @@ Data Structure program in C++
 
 
 
-# The Topics to cover in DataStructure-
+# The Topics to cover in Algorithm-
 
 1. searching algorithm
     - linear
