@@ -1,0 +1,24 @@
+Types of edges in DFS Traversal:-
+
+# Tree edge - 
+				It is an edge which is present in the tree obtained after applying DFS on the graph.
+
+# Forward edges - 
+					The edges which are not the part of DFS traversal. 
+
+					Let's say e:(x,y) where y appears after x and there is u path from x to y.
+
+# Back edges -  
+				The edges which are not the part of DFS traversal. 
+
+				Let's say e:(x,y) where y appears before x and there is a path from y to x.
+
+				Presence of back edge indicates a cycle in directed graph. 
+
+# Cross edges - 
+				The edges which are not the part of DFS traversal. 
+
+				Let's say e:(x,y) where no path from y to x.
+
+
+where x -----> y

@@ -1,0 +1,28 @@
+Representation of graph in computeer:-
+
+1. Adjancency Matrix
+2. Adjacency List
+
+# Adjancency Matrix - 
+	Adjacency Matrix is a 2D array of size V x V where V is the number of vertices in a graph. Let the 2D array be adj[][], a slot adj[i][j] = 1 indicates that there is an edge from vertex i to vertex j. Adjacency matrix for undirected graph is always symmetric. 
+	
+	-This matrix is mainly use when each node of the graph is connected to one another.
+
+	-It is also known as dance graph.
+
+	-It is a matrix A[n][n], where n is number of vertices.
+
+	-i.e.{ a[i][j] = 1 if i andd j are adjacent
+				   = 0 otherwise.
+
+	-space complexity = O(n^2)
+
+
+# Adjacency List-
+	An Adjacency list is an array consisting of the address of all the linked lists. The first node of the linked list represents the vertex and the remaining lists connected to this node represents the vertices to which this node is connected. 
+
+	-This matrix in mainly use when each node of the graph is not connceted to on another.
+	
+	- It is also known as sparse graph.
+
+	- space complexity = O(n+2e){here 2e represent that every array node in the graph occure twice in the linked lists in the array}

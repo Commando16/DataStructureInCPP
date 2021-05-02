@@ -1,0 +1,24 @@
+Minimum Spanning Tree:-
+
+#Spanning Tree - 
+				Let's G(V,E) be a graph and there is a spanning tree i.e G'(V',E')
+				where, V' = V and E' is subset of E and E' = |V|-1.
+
+				Spanning tree should not contain any cycle.
+				Spanning tree should not be disconnected.
+
+#Properties of Spanning Tree - 
+				
+				- Removing one edge from the spanning tree will make it disconnected.
+
+				- Adding one edge to the spanning tree will create a loop.
+
+				- If each edge has distint weight then there will be only one and unique Minimum Spanning Tree.
+
+				- A complete indirected graph(each vartex connected with one another) can have n^n-2(n is number of vartices) numbers of spanning tree.
+
+				- Every connected and undirected graph has atleast on spanning tree.
+
+				- Disconnected graph does not have any spanning tree.
+
+				- From a complete graph by removing max(e-n+1) edges we can construct a spanning tree.
