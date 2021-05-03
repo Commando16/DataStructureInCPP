@@ -1,0 +1,19 @@
+Binary Search Tree
+	- tree which only allow any node to have atmost two children only.\
+	- the children which is at the left of the node is called left child.
+	- the children which is at the right if the node is called right child.
+	- at eac level the maximum number of node possible is (2^level)./ Ex- on 0th level 2^0 = 1, on 1st level 2^1 = 2, on 5 level 2^5 = 32
+
+
+
+
+
+
+
+
+# IMPORTANT CONDITION FOR A BINARY SEARCH TREE
+
+	- the left child of any node must be smaller then or equal to the node itself.
+	- the right child of any node must be greater then the node itself.
+	- while inserting any data also we need to take care of the above two conditions. We need to traverse down the tree until we find a suitable palace for element to get inserted.
+
