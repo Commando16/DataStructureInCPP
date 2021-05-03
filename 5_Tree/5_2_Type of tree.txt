@@ -1,3 +1,0 @@
-Binary Tree
-	- tree which only allow up to two child node.
-	- at eac level the maximum number of node possible is (2^level)./ Ex- on 0th level 2^0 = 1, on 1st level 2^1 = 2, on 5 level 2^5 = 32
