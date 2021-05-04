@@ -1,0 +1,1706 @@
+Questions
+
+
+
+
+1. A linear list of elements in which deletion can be done from one end (front) and insertion can take place only at the other end (rear) is known as _____________
+a) Queue
+b) Stack
+c) Tree
+d) Linked list
+
+Answer: a
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+2. The data structure required for Breadth First Traversal on a graph is?
+a) Stack
+b) Array
+c) Queue
+d) Tree
+
+Answer: c
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+3. A queue follows __________
+a) FIFO (First In First Out) principle
+b) LIFO (Last In First Out) principle
+c) Ordered array
+d) Linear tree
+
+Answer: a
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+4. Circular Queue is also known as ________
+a) Ring Buffer
+b) Square Buffer
+c) Rectangle Buffer
+d) Curve Buffer
+
+
+Answer: a
+Explanation: Circular Queue is also called as Ring Buffer. Circular Queue is a linear data structure in which last position is connected back to the first position to make a circle. It forms a ring structure.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+5. If the elements “A”, “B”, “C” and “D” are placed in a queue and are deleted one at a time, in what order will they be removed?
+a) ABCD
+b) DCBA
+c) DCAB
+d) ABDC
+
+Answer: a
+Explanation: Queue follows FIFO approach. i.e. First in First Out Approach. So, the order of removal elements are ABCD.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+6. A data structure in which elements can be inserted or deleted at/from both ends but not in the middle is?
+a) Queue
+b) Circular queue
+c) Dequeue
+d) Priority queue
+
+Answer: c
+Explanation: In dequeuer, we can insert or delete elements from both the ends. In queue, we will follow first in first out principle for insertion and deletion of elements. Element with least priority will be deleted in a priority queue.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+7. A normal queue, if implemented using an array of size MAX_SIZE, gets full when?
+a) Rear = MAX_SIZE – 1
+b) Front = (rear + 1)mod MAX_SIZE
+c) Front = rear + 1
+d) Rear = front
+
+Answer: a
+Explanation: When Rear = MAX_SIZE – 1, there will be no space left for the elements to be added in queue. Thus queue becomes full.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+8. Queues serve major role in ______________
+a) Simulation of recursion
+b) Simulation of arbitrary linked list
+c) Simulation of limited resource allocation
+d) Simulation of heap sort
+
+Answer: c
+Explanation: Simulation of recursion uses stack data structure. Simulation of arbitrary linked lists uses linked lists. Simulation of resource allocation uses queue as first entered data needs to be given first priority during resource allocation. Simulation of heap sort uses heap data structure.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+9. Which of the following is not the type of queue?
+a) Ordinary queue
+b) Single ended queue
+c) Circular queue
+d) Priority queue
+
+Answer: b
+Explanation: Queue always has two ends. So, single ended queue is not the type of queue.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+10. Which of the following properties is associated with a queue?
+a) First In Last Out
+b) First In First Out
+c) Last In First Out
+d) Last In Last Out
+
+Answer: b
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+11. In a circular queue, how do you increment the rear end of the queue?
+a) rear++
+b) (rear+1) % CAPACITY
+c) (rear % CAPACITY)+1
+d) rear–
+
+
+Answer: b
+Explanation: Ensures rear takes the values from 0 to (CAPACITY-1).
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+12. What is the term for inserting into a full queue known as?
+a) overflow
+b) underflow
+c) null pointer exception
+d) program won’t be compiled
+
+Answer: a
+Explanation: Just as stack, inserting into a full queue is termed overflow.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+13. What is the time complexity of enqueue operation?
+a) O(logn)
+b) O(nlogn)
+c) O(n)
+d) O(1)
+
+Answer: d
+Explanation: Enqueue operation is at the rear end, it takes O(1) time to insert a new item into the queue.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+14. What does the following Java code do?
+
+public Object function()
+{
+	if(isEmpty())
+	return -999;
+	else
+	{
+		Object high;
+		high = q[front];
+		return high;
+	}
+}
+
+a) Dequeue
+b) Enqueue
+c) Return the front element
+d) Return the last element
+
+Answer: c
+Explanation: q[front] gives the element at the front of the queue, since we are not moving the ‘front’ to the next element,
+it is not a dequeue operation.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+15. What is the need for a circular queue?
+a) effective usage of memory
+b) easier computations
+c) to delete elements based on priority
+d) implement LIFO principle in queues
+
+
+Answer: a
+Explanation: In a linear queue, dequeue operation causes the starting elements of the array to be empty, and there is no way you can use that space, while in a circular queue, you can effectively use that space. Priority queue is used to delete the elements based on their priority. Higher priority elements will be deleted first whereas lower priority elements will be deleted next. Queue data structure always follows FIFO principle.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+16. Which of the following represents a dequeue operation? (count is the number of elements in the queue)
+
+a)
+public Object dequeue()
+{
+	if(count == 0)
+	{
+		System.out.println("Queue underflow");
+		return 0;
+	}
+	else
+	{
+		Object ele = q[front];
+		q[front] = null;
+		front = (front+1)%CAPACITY;
+		count--;
+		return ele;
+	}
+}
+
+b)
+public Object dequeue()
+{
+	if(count == 0)
+	{
+		System.out.println("Queue underflow");
+		return 0;
+	}
+	else
+	{
+		Object ele = q[front];
+		front = (front+1)%CAPACITY;
+		q[front] = null;
+		count--;
+		return ele;
+	}
+}
+
+c)
+public Object dequeue()
+{
+	if(count == 0)
+	{
+		System.out.println("Queue underflow");
+		return 0;
+	}
+	else
+	{
+		front = (front+1)%CAPACITY;
+		Object ele = q[front];
+		q[front] = null;
+		count--;
+		return ele;
+	}
+}
+
+d)
+public Object dequeue()
+{
+	if(count == 0)
+	{
+		System.out.println("Queue underflow");
+		return 0;
+	}
+	else
+	{
+		Object ele = q[front];
+		q[front] = null;
+		front = (front+1)%CAPACITY;
+		return ele;
+		count--;
+	}
+}
+
+Answer: a
+Explanation: Dequeue removes the first element from the queue, ‘front’ points to the front end of the queue and returns the first element.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+17. Which of the following best describes the growth of a linear queue at runtime? (Q is the original queue, size() returns the number of elements in the queue)
+
+a)
+private void expand()
+{
+	int length = size();
+	int[] newQ = new int[length<<1];
+	for(int i=front; i<=rear; i++)
+	{
+		newQ[i-front] = Q[i%CAPACITY];
+	}
+	Q = newQ;
+	front = 0;
+	rear = size()-1;
+}
+
+b)
+private void expand()
+{
+	int length = size();
+	int[] newQ = new int[length<<1];
+	for(int i=front; i<=rear; i++)
+	{
+		newQ[i-front] = Q[i%CAPACITY];
+	}
+	Q = newQ;
+}
+
+c)
+private void expand()
+{
+	int length = size();
+	int[] newQ = new int[length<<1];
+	for(int i=front; i<=rear; i++)
+	{
+		newQ[i-front] = Q[i];
+	}
+	Q = newQ;
+	front = 0;
+	rear = size()-1;
+}
+
+d)
+private void expand()
+{
+	int length = size();
+	int[] newQ = new int[length*2];
+	for(int i=front; i<=rear; i++)
+	{
+		newQ[i-front] = Q[i%CAPACITY];
+	}
+	Q = newQ;
+}
+
+Answer: a
+Explanation: A common technique to expand the size of array at run time is simply to double the size. Create a new array of double the previous size and copy all the elements, after copying do not forget to assign front = 0 and rear = size()-1, as these are necessary to maintain the decorum of the queue operations.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+18. What is the space complexity of a linear queue having n elements?
+a) O(n)
+b) O(nlogn)
+c) O(logn)
+d) O(1)
+
+Answer: a
+Explanation: Because there are n elements.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+19. What is the output of the following Java code?
+
+public class CircularQueue
+{
+	protected static final int CAPACITY = 100;
+	protected int size,front,rear;
+	protected Object q[];
+	int count = 0;
+ 
+	public CircularQueue()
+	{
+		this(CAPACITY);
+	}
+	public CircularQueue (int n)
+	{
+		size = n;
+		front = 0;
+		rear = 0;
+		q = new Object[size];
+	}
+ 
+ 
+	public void enqueue(Object item)
+	{
+		if(count == size)
+		{
+			System.out.println("Queue overflow");
+				return;
+		}
+		else
+		{
+			q[rear] = item;
+			rear = (rear+1)%size;
+			count++;
+		}
+	}
+	public Object dequeue()
+	{
+		if(count == 0)
+		{
+			System.out.println("Queue underflow");
+			return 0;
+		}
+		else
+		{
+			Object ele = q[front];
+			q[front] = null;
+			front = (front+1)%size;
+			count--;
+			return ele;
+		}
+	}
+	public Object frontElement()
+	{
+		if(count == 0)
+		return -999;
+		else
+		{
+			Object high;
+			high = q[front];
+			return high;
+		}
+	}
+	public Object rearElement()
+	{
+		if(count == 0)
+		return -999;
+		else
+		{
+			Object low;
+			rear = (rear-1)%size;
+			low = q[rear];
+			rear = (rear+1)%size;
+			return low;
+		}
+	}
+}
+public class CircularQueueDemo
+{
+	public static void main(String args[])
+	{
+		Object var;
+		CircularQueue myQ = new CircularQueue();
+		myQ.enqueue(10);
+		myQ.enqueue(3);
+		var = myQ.rearElement();
+		myQ.dequeue();
+		myQ.enqueue(6);
+		var = mQ.frontElement();
+		System.out.println(var+" "+var);
+	}
+}
+a) 3 3
+b) 3 6
+c) 6 6
+d) 10 6
+
+Answer: a
+Explanation: First enqueue 10 and 3 into the queue, followed by a dequeue(removes 10), followed by an enqueue(6), At this point, 3 is at the front end of the queue and 6 at the rear end, hence a call to frontElement() will return 3 which is displayed twice.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+20. In linked list implementation of queue, if only front pointer is maintained, which of the following operation take worst case linear time?
+a) Insertion
+b) Deletion
+c) To empty a queue
+d) Both Insertion and To empty a queue
+
+Answer: d
+Explanation: Since front pointer is used for deletion, so worst time for the other two cases.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+21. In linked list implementation of a queue, where does a new element be inserted?
+a) At the head of link list
+b) At the centre position in the link list
+c) At the tail of the link list
+d) At any position in the linked list
+
+Answer: c
+Explanation: Since queue follows FIFO so new element inserted at last.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+22. In linked list implementation of a queue, front and rear pointers are tracked. Which of these pointers will change during an insertion into a NONEMPTY queue?
+a) Only front pointer
+b) Only rear pointer
+c) Both front and rear pointer
+d) No pointer will be changed
+
+Answer: b
+Explanation: Since queue follows FIFO so new element inserted at last.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+23. In linked list implementation of a queue, front and rear pointers are tracked. Which of these pointers will change during an insertion into EMPTY queue?
+a) Only front pointer
+b) Only rear pointer
+c) Both front and rear pointer
+d) No pointer will be changed
+
+Answer: c
+Explanation: Since its the starting of queue, so both values are changed.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+24. In case of insertion into a linked queue, a node borrowed from the __________ list is inserted in the queue.
+a) AVAIL
+b) FRONT
+c) REAR
+d) NULL
+
+Answer: a
+Explanation: All the nodes are collected in AVAIL list.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+25. In linked list implementation of a queue, from where is the item deleted?
+a) At the head of link list
+b) At the centre position in the link list
+c) At the tail of the link list
+d) Node before the tail
+
+Answer: a
+Explanation: Since queue follows FIFO so new element deleted from first.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+26. In linked list implementation of a queue, the important condition for a queue to be empty is?
+a) FRONT is null
+b) REAR is null
+c) LINK is empty
+d) FRONT==REAR-1
+
+Answer: a
+Explanation: Because front represents the deleted nodes.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+27. The essential condition which is checked before insertion in a linked queue is?
+a) Underflow
+b) Overflow
+c) Front value
+d) Rear value
+
+Answer: b
+Explanation: To check whether there is space in the queue or not.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+28. The essential condition which is checked before deletion in a linked queue is?
+a) Underflow
+b) Overflow
+c) Front value
+d) Rear value
+
+Answer: a
+Explanation: To check whether there is element in the list or not.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+29. Which of the following is true about linked list implementation of queue?
+a) In push operation, if new nodes are inserted at the beginning of linked list, then in pop operation, nodes must be removed from end
+b) In push operation, if new nodes are inserted at the beginning, then in pop operation, nodes must be removed from the beginning
+c) In push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from end
+d) In push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from beginning
+
+
+Answer: a
+Explanation: It can be done by both the methods.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+_______________________________________________________________________________________________________________________
+This set of Data Structure Multiple Choice Questions & Answers (MCQs) focuses on “Double Ended Queue (Dequeue)”.
+_______________________________________________________________________________________________________________________
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+30. What is a dequeue?
+a) A queue with insert/delete defined for both front and rear ends of the queue
+b) A queue implemented with a doubly linked list
+c) A queue implemented with both singly and doubly linked lists
+d) A queue with insert/delete defined for front side of the queue
+View Answer
+
+Answer: a
+Explanation: A dequeue or a double ended queue is a queue with insert/delete defined for both front and rear ends of the queue.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+31. Select the function which performs insertion at the front end of the dequeue?
+
+a)
+public void function(Object item)
+{
+	Node temp = new Node(item,null);
+	if(isEmpty())
+	{
+		temp.setNext(trail);
+		head.setNext(temp);
+	}
+	else
+	{
+		Node cur = head.getNext();
+		temp.setNext(cur);
+		head.setNext(temp);
+	}
+	size++;
+}
+
+b)
+public void function(Object item)
+{
+	Node temp = new Node(item,null);
+	if(isEmpty())
+	{
+		temp.setNext(trail);
+		head.setNext(trail);
+	}
+	else
+	{
+		Node cur = head.getNext();
+		temp.setNext(cur);
+		head.setNext(temp);
+	}
+	size++;
+}
+
+c)
+public void function(Object item)
+{
+	Node temp = new Node(item,null);
+	if(isEmpty())
+	{
+		Node cur = head.getNext();
+		temp.setNext(cur);
+		head.setNext(temp);
+	}
+	else
+	{
+		temp.setNext(trail);
+		head.setNext(temp);
+	}
+	size++;
+}
+
+d)
+public void function(Object item)
+{
+	Node temp = new Node(item,null);
+	if(isEmpty())
+	{
+		Node cur = head.getNext();
+		temp.setNext(cur);
+		cur.setNext(temp);
+	}
+	else
+	{
+		head.setNext(trail);
+		trail.setNext(temp);
+	}
+	size++;
+}
+
+Answer: a
+Explanation: Create a new node, if the current list is empty, the ‘head’ points to this node and this new node points to ‘trail’. Otherwise, ‘head’ points to the new node and this in turn points to the current first element(head.getNext()).
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+32. What is the functionality of the following piece of code?
+public void function(Object item)
+{
+	Node temp=new Node(item,trail);
+	if(isEmpty())
+	{
+		head.setNext(temp);
+		temp.setNext(trail);
+	}
+	else
+	{
+		Node cur=head.getNext();
+		while(cur.getNext()!=trail)
+		{
+			cur=cur.getNext();
+		}
+		cur.setNext(temp);
+	}
+	size++;
+}
+a) Insert at the front end of the dequeue
+b) Insert at the rear end of the dequeue
+c) Fetch the element at the rear end of the dequeue
+d) Fetch the element at the front end of the dequeue
+
+Answer: b
+Explanation: If the list is empty, this new node will point to ‘trail’ and will be pointed at by ‘head’. Otherwise, traverse till the end of the list and insert the new node there.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+33. What are the applications of dequeue?
+a) A-Steal job scheduling algorithm
+b) Can be used as both stack and queue
+c) To find the maximum of all sub arrays of size k
+d) To avoid collision in hash tables
+
+Answer: d
+Explanation: All of the mentioned can be implemented with a dequeue.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+34. Which of the following can be used to delete an element from the front end of the queue?
+
+a)
+public Object deleteFront() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = temp;
+		Object e = temp.getEle();
+		head.setNext(cur);
+		size--;
+		return e;
+	}
+}
+
+b)
+public Object deleteFront() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = temp.getNext();
+		Object e = temp.getEle();
+		head.setNext(cur);
+		size--;
+		return e;
+	}
+}
+
+c)
+public Object deleteFront() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = temp.getNext();
+		Object e = temp.getEle();
+		head.setNext(temp);
+		size--;
+		return e;
+	}
+}
+
+d)
+public Object deleteFront() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = temp.getNext();
+		Object e = temp.getEle();
+		temp.setNext(cur);
+		size--;
+		return e;
+	}
+}
+
+Answer: b
+Explanation: Have two pointers, one(temp) pointing to the first element and the other(cur) pointing to the second element. Make the ‘head’ point to the second element, this removes all reference for ‘temp’.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+35. Which of the following can be used to delete an element from the rear end of the queue?
+
+a)
+public Object deleteRear() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = temp;
+		while(temp.getNext() != trail)
+		{
+			temp = temp.getNext();
+			cur = cur.getNext();
+		}
+		Object e = temp.getEle();
+		cur.setNext(trail);
+		size--;
+		return e;
+	}
+}
+
+b)
+public Object deleteRear() throws emptyDEQException
+{
+	if(isEmpty())
+		throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = head;
+		while(temp != trail)
+		{
+			temp = temp.getNext();
+			cur = cur.getNext();
+		}
+		Object e = temp.getEle();
+		cur.setNext(trail);
+		size--;
+		return e;
+	}
+}
+
+c)
+public Object deleteRear() throws emptyDEQException
+{
+	if(isEmpty())
+	throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = head;
+		while(temp.getNext()!=trail)
+		{
+			temp = temp.getNext();
+			cur = cur.getNext();
+		}
+		Object e = temp.getEle();
+		cur.setNext(trail);
+		size--;
+		return e;
+	}
+}
+
+d)
+public Object deleteRear() throws emptyDEQException
+{
+	if(isEmpty())
+	throw new emptyDEQException("Empty");
+	else
+	{
+		Node temp = head.getNext();
+		Node cur = head;
+		while(temp.getNext()!=trail)
+		{
+			temp = temp.getNext();
+			cur = cur.getNext();
+		}
+		Object e = temp.getEle();
+		temp.setNext(trail);
+		size--;
+		return e;
+	}
+}
+
+Answer: c
+Explanation: Traverse till the end of the list with a pointer ‘temp’ and another ‘cur’ which is trailing behind temp, make ‘cur’ point to trail, this removes all reference for ‘temp’.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+36. What is the time complexity of deleting from the rear end of the dequeue implemented with a singly linked list?
+a) O(nlogn)
+b) O(logn)
+c) O(n)
+d) O(n2)
+
+Answer: c
+Explanation: Since a singly linked list is used, first you have to traverse till the end, so the complexity is O(n).
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+37. After performing these set of operations, what does the final list look contain?
+
+InsertFront(10);
+InsertFront(20);
+InsertRear(30);
+DeleteFront();
+InsertRear(40);
+InsertRear(10);
+DeleteRear();
+InsertRear(15);
+display();
+a) 10 30 10 15
+b) 20 30 40 15
+c) 20 30 40 10
+d) 10 30 40 15
+
+Answer: d
+Explanation: A careful tracing of the given operation yields the result.
+10
+20 10
+20 10 30
+10 30
+10 30 40
+10 30 40 10
+10 30 40
+10 30 40 15
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+_______________________________________________________________________________________________________________________
+This set of Data Structures & Algorithms Multiple Choice Questions & Answers (MCQs) focuses on “Queue using Stacks”.
+_______________________________________________________________________________________________________________________
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+38. A Double-ended queue supports operations such as adding and removing items from both the sides of the queue. They support four operations like addFront(adding item to top of the queue), addRear(adding item to the bottom of the queue), removeFront(removing item from the top of the queue) and removeRear(removing item from the bottom of the queue). You are given only stacks to implement this data structure. You can implement only push and pop operations. What are the total number of stacks required for this operation?(you can reuse the stack)
+a) 1
+b) 2
+c) 3
+d) 4
+
+Answer: b
+Explanation: The addFront and removeFront operations can be performed using one stack itself as push and pop are supported (adding and removing element from top of the stack) but to perform addRear and removeRear you need to pop each element from the current stack and push it into another stack, push or pop the element as per the asked operation from this stack and in the end pop elements from this stack to the first stack.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+39. You are asked to perform a queue operation using a stack. Assume the size of the stack is some value ‘n’ and there are ‘m’ number of variables in this stack. The time complexity of performing deQueue operation is (Using only stack operations like push and pop)(Tightly bound).
+a) O(m)
+b) O(n)
+c) O(m*n)
+d) Data is insufficient
+
+Answer: a
+Explanation: To perform deQueue operation you need to pop each element from the first stack and push it into the second stack. In this case you need to pop ‘m’ times and need to perform push operations also ‘m’ times. Then you pop the first element from this second stack (constant time) and pass all the elements to the first stack (as done in the beginning)(‘m-1’ times). Therfore the time complexity is O(m).
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+40. Consider you have an array of some random size. You need to perform dequeue operation. You can perform it using stack operation (push and pop) or using queue operations itself (enQueue and Dequeue). The output is guaranteed to be same. Find some differences?
+a) They will have different time complexities
+b) The memory used will not be different
+c) There are chances that output might be different
+d) No differences
+
+Answer: a
+Explanation: To perform operations such as Dequeue using stack operation you need to empty all the elements from the current stack and push it into the next stack, resulting in a O(number of elements) complexity whereas the time complexity of dequeue operation itself is O(1). And there is a need of a extra stack. Therefore more memory is needed.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+41. Consider you have a stack whose elements in it are as follows.
+5 4 3 2 << top
+Where the top element is 2.
+You need to get the following stack
+6 5 4 3 2 << top
+The operations that needed to be performed are (You can perform only push and pop):
+a) Push(pop()), push(6), push(pop())
+b) Push(pop()), push(6)
+c) Push(pop()), push(pop()), push(6)
+d) Push(6)
+
+Answer: a
+Explanation: By performing push(pop()) on all elements on the current stack to the next stack you get 2 3 4 5 << top.Push(6) and perform push(pop()) you’ll get back 6 5 4 3 2 << top. You have actually performed enQueue operation using push and pop.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+42. A double-ended queue supports operations like adding and removing items from both the sides of the queue. They support four operations like addFront(adding item to top of the queue), addRear(adding item to the bottom of the queue), removeFront(removing item from the top of the queue) and removeRear(removing item from the bottom of the queue). You are given only stacks to implement this data structure. You can implement only push and pop operations. What’s the time complexity of performing addFront and addRear? (Assume ‘m’ to be the size of the stack and ‘n’ to be the number of elements)
+a) O(m) and O(n)
+b) O(1) and O(n)
+c) O(n) and O(1)
+d) O(n) and O(m)
+
+Answer: b
+Explanation: addFront is just a normal push operation. Push operation is of O(1). Whereas addRear is of O(n) as it requires two push(pop()) operations of all elements of a stack.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+43. Why is implementation of stack operations on queues not feasible for a large dataset (Asssume the number of elements in the stack to be n)?
+a) Because of its time complexity O(n)
+b) Because of its time complexity O(log(n))
+c) Extra memory is not required
+d) There are no problems
+
+Answer: a
+Explanation: To perform Queue operations such as enQueue and deQueue there is a need of emptying all the elements of a current stack and pushing elements into the next stack and vice versa. Therfore it has a time complexity of O(n) and the need of extra stack as well, may not be feasible for a large dataset.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+44. Consider yourself to be in a planet where the computational power of chips to be slow. You have an array of size 10.You want to perform enqueue some element into this array. But you can perform only push and pop operations .Push and pop operation both take 1 sec respectively. The total time required to perform enQueue operation is?
+a) 20
+b) 40
+c) 42
+d) 43
+
+Answer: d
+Explanation: First you have to empty all the elements of the current stack into the temporary stack, push the required element and empty the elements of the temporary stack into the original stack. Therfore taking 10+10+1+11+11= 43 seconds.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+45. You have two jars, one jar which has 10 rings and the other has none. They are placed one above the other. You want to remove the last ring in the jar. And the second jar is weak and cannot be used to store rings for a long time.
+a) Empty the first jar by removing it one by one from the first jar and placing it into the second jar
+b) Empty the first jar by removing it one by one from the first jar and placing it into the second jar and empty the second jar by placing all the rings into the first jar one by one
+c) There exists no possible way to do this
+d) Break the jar and remove the last one
+
+Answer: b
+Explanation: This is similar to performing dequeue operation using push and pop only. Elements in the first jar are taken out and placed in the second jar. After removing the last element from the first jar, remove all the elements in the second jar and place them in the first jar.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+46. Given only a single array of size 10 and no other memory is available. Which of the following operation is not feasible to implement (Given only push and pop operation)?
+a) Push
+b) Pop
+c) Enqueue
+d) Returntop
+
+Answer: c
+Explanation: To perform Enqueue using just push and pop operations, there is a need of another array of same size. But as there is no extra available memeory, the given operation is not feasible.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+47. Given an array of size n, let’s assume an element is ‘touched’ if and only if some operation is performed on it(for example, for performing a pop operation the top element is ‘touched’). Now you need to perform Dequeue operation. Each element in the array is touched atleast?
+a) Once
+b) Twice
+c) Thrice
+d) Four times
+
+Answer: d
+Explanation: First each element from the first stack is popped, then pushed into the second stack, dequeue operation is done on the top of the stack and later the each element of second stack is popped then pushed into the first stack. Therfore each element is touched four times.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+_______________________________________________________________________________________________________________________
+This set of Data Structure Multiple Choice Questions & Answers (MCQs) focuses on “Stack using Queues”.
+_______________________________________________________________________________________________________________________
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+48. To implement a stack using queue(with only enqueue and dequeue operations), how many queues will you need?
+a) 1
+b) 2
+c) 3
+d) 4
+View Answer
+
+Answer: b
+Explanation: Either the push or the pop has to be a costly operation, and the costlier operation requires two queues.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+49. Making the push operation costly, select the code snippet which implements the same.(let q1 and q2 be two queues)
+a)
+
+public void push(int x)
+{
+        if(empty())
+        {
+            q1.offer(x);
+        }
+        else{
+                if(q1.size()>0)
+                {
+                    q2.offer(x);
+                    int size = q1.size();
+                    while(size>0)
+                    {
+                        q2.offer(q1.poll());
+                        size--;
+                    }
+                }
+            else if(q2.size()>0)
+            {
+                q1.offer(x);
+                int size = q2.size();
+                while(size>0)
+                {
+                    q1.offer(q2.poll());
+                    size--;
+                }
+            }
+        }
+    }
+b)
+
+public void push(int x)
+{
+        if(empty())
+        {
+            q1.offer(x);
+        }
+        else
+        {
+            if(q1.size()>0)
+            {
+                q1.offer(x);
+                int size = q1.size();
+                while(size>0)
+                {
+                    q2.offer(q1.poll());
+                    size--;
+                }
+            }
+            else if(q2.size()>0)
+            {
+                q2.offer(x);
+                int size = q2.size();
+                while(size>0)
+                {
+                    q1.offer(q2.poll());
+                    size--;
+                }
+            }
+        }
+}
+c)
+
+public void push(int x)
+{
+        if(empty())
+        {
+            q1.offer(x);
+        }
+        else
+        {
+            if(q1.size()>0)
+            {
+                q2.offer(x);
+                int size = q1.size();
+                while(size>0)
+                {
+                    q1.offer(q2.poll());
+                    size--;
+                }
+            }
+            else if(q2.size()>0)
+            {
+                q1.offer(x);
+                int size = q2.size();
+                while(size>0)
+                {
+                    q2.offer(q1.poll());
+                    size--;
+                }
+            }
+        }
+}
+d)
+
+public void push(int x)
+{
+        if(empty())
+        {
+            q1.offer(x);
+        }
+        else
+        {
+            if(q1.size()>0)
+            {
+                q2.offer(x);
+                int size = q1.size();
+                while(size>0)
+                {
+                    q2.offer(q2.poll());
+                    size--;
+                }
+            }
+            else if(q2.size()>0)
+            {
+                q1.offer(x);
+                int size = q2.size();
+                while(size>0)
+                {
+                    q2.offer(q1.poll());
+                    size--;
+                }
+            }
+        }
+}
+
+Answer: a
+Explanation: Stack follows LIFO principle, hence a new item added must be the first one to exit, but queue follows FIFO principle, so when a new item is entered into the queue, it will be at the rear end of the queue. If the queue is initially empty, then just add the new element, otherwise add the new element to the second queue and dequeue all the elements from the second queue and enqueue it to the first one, in this way, the new element added will be always in front of the queue. Since two queues are needed to realize this push operation, it is considered to be costlier.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+50. Making the push operation costly, select the code snippet which implements the pop operation.
+
+a)
+public void pop()
+{
+        if(q1.size()>0)
+        {
+            q2.poll();
+        }
+        else if(q2.size()>0)
+        {
+            q1.poll();
+        }
+}
+
+b)
+public void pop()
+{
+        if(q1.size()>0)
+        {
+            q1.poll();
+        }
+        else if(q2.size()>0)
+        {
+            q2.poll();
+        }
+}
+
+c)
+public void pop()
+{
+        q1.poll();
+	q2.poll();
+}
+
+d)
+public void pop()
+{
+        if(q2.size()>0)
+        {
+            q1.poll();
+        }
+        else
+        {
+            q2.poll();
+        }
+}
+
+Answer: b
+Explanation: As the push operation is costly, it is evident that the required item is in the front of the queue, so just dequeue the element from the queue.
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+51. Select the code snippet which returns the top of the stack.
+
+a)
+public int top()
+{
+       if(q1.size()>0)
+       {
+            return q1.poll();
+       }
+       else if(q2.size()>0)
+       {
+            return q2.poll();
+       }
+       return 0;
+}
+
+b)
+public int top()
+{
+       if(q1.size()==0)
+       {
+            return q1.peek();
+       }
+       else if(q2.size()==0)
+       {
+            return q2.peek();
+       }
+        return 0;
+    }
+
+c)
+public int top()
+{
+       if(q1.size()>0)
+       {
+            return q1.peek();
+       }
+       else if(q2.size()>0)
+       {
+            return q2.peek();
+       }
+       return 0;
+}
+
+d)
+public int top()
+{
+       if(q1.size()>0)
+       {
+            return q2.peek();
+       }
+       else if(q2.size()>0)
+       {
+            return q1.peek();
+       }
+       return 0;
+}
+
+Answer: c
+Explanation: Assuming its a push costly implementation, the top of the stack will be in the front end of the queue, note that peek() just returns the front element, while poll() removes the front element from the queue.
+ 
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+52. Select the code snippet which return true if the stack is empty, false otherwise.
+a)
+public boolean empty()
+{
+     return q2.isEmpty();
+}
+b)
+
+public boolean empty() 
+{
+     return q1.isEmpty() || q2.isEmpty();
+}
+c)
+
+public boolean empty() 
+{
+     return q1.isEmpty();
+}
+d)
+
+public boolean empty() 
+{
+     return q1.isEmpty() & q2.isEmpty();
+}
+
+Answer: b
+Explanation: If both the queues are empty, then the stack also is empty.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+53. Making the pop operation costly, select the code snippet which implements the same.
+a)
+public int pop()
+{
+	int res=-999,count=0;
+	if(q1.size()>0)
+        {
+		count = q1.size();
+		while(count>0)
+			q2.offer(q1.poll());
+		res = q1.poll();
+	}
+	if(q2.size()>0)
+        {
+		count = q2.size();
+		while(count>0)
+			q1.offer(q2.poll());
+		res = q2.poll();
+	}
+	return res;
+}
+b)
+
+public int pop()
+{
+	int res=-999,count=0;
+	if(q1.size()>0)
+        {
+		count = q1.size();
+		while(count>1)
+			q2.offer(q1.poll());
+		res = q2.poll();
+	}
+	if(q2.size()>0)
+        {
+		count = q2.size();
+		while(count>1)
+			q1.offer(q2.poll());
+		res = q1.poll();
+	}
+	return res;
+}
+c)
+
+public int pop()
+{
+	int res=-999,count=0;
+	if(q1.size()>0)
+        {
+		count = q1.size();
+		while(count>1)
+			q2.offer(q1.poll());
+		res = q1.poll();
+	}
+	if(q2.size()>0)
+        {
+		count = q2.size();
+		while(count>1)
+			q1.offer(q2.poll());
+		res = q2.poll();
+	}
+	return res;
+}
+d)
+
+public int pop()
+{
+	int res=-999,count=0;
+	if(q1.size()>0)
+        {
+		count = q2.size();
+		while(count>1)
+			q2.offer(q1.poll());
+		res = q1.poll();
+	}
+	if(q2.size()>0)
+        {
+		count = q1.size();
+		while(count>1)
+			q1.offer(q2.poll());
+		res = q2.poll();
+	}
+	return res;
+}
+
+Answer: c
+Explanation: Here the pop operation is costly, hence we need two queues, other than the first element, all the the elements from one queue are dequeued and enqueued to the second queue, hence only one element remains in the first queue which is the item we want, so dequeue it and return the result.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+55. What is the functionality of the following piece of code?
+public void fun(int x)
+{
+	q1.offer(x);
+}
+a) Perform push() with push as the costlier operation
+b) Perform push() with pop as the costlier operation
+c) Perform pop() with push as the costlier operation
+d) Perform pop() with pop as the costlier operation
+
+Answer: b
+Explanation: offer() suggests that it is a push operation, but we see that it is performed with only one queue, hence the pop operation is costlier.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************************************************************************************************************************
+
+SOURCES-
+- https://www.sanfoundry.com/
+- https://www.geeksforgeeks.org/
+
+*************************************************************************************************************************
